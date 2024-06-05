@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import './Main/Main.css'
-// import GenerateBtn from './GenerateBtn'
-import getMergeSortAnimation from '../../sortingAlgos/MergeSort';
 import getBubbleSortAnimation from '../../sortingAlgos/BubbleSort';
 import Navbar from '../header/Navbar'
 import Slider from 'react-input-slider';
+import bubble1 from '../assets/bubble1.png'
+import bubble2 from '../assets/bubble2.png'
+import bubble3 from '../assets/bubble3.png'
 
 
 // Change this value for the speed of the animation.
@@ -42,84 +43,10 @@ const Main = (props) => {
         resetArray();
     }, [arraySize]);
 
-    // const validateIndices = (barOneIdx, barTwoIdx, arrayBars) => {
-    //     return barOneIdx >= 0 && barOneIdx < arrayBars.length && barTwoIdx >= 0 && barTwoIdx < arrayBars.length;
-    // }
 
-
-    // const MergeSort = () =>{
-    //     const animation = getMergeSortAnimation(array.slice());
-    //     for (let i = 0; i < animation.length; i++) {
-    //         const arrayBars = document.getElementsByClassName('array-bar');
-    //         const isColorChange = i % 3 !== 2;
-    //         if (isColorChange) {
-    //             const [barOneIdx, barTwoIdx] = animation[i];
-    //             const barOneStyle = arrayBars[barOneIdx].style;
-    //             const barTwoStyle = arrayBars[barTwoIdx].style;
-    //             const color = i % 3 === 0 ? SECONDARY_COLOR : PRIMARY_COLOR;
-    //             setTimeout(() => {
-    //             barOneStyle.backgroundColor = color;
-    //             barTwoStyle.backgroundColor = color;
-    //             }, i * ANIMATION_SPEED_MS);
-    //         } else {
-    //             setTimeout(() => {
-    //             const [barOneIdx, newHeight] = animation[i];
-    //             const barOneStyle = arrayBars[barOneIdx].style;
-    //             barOneStyle.height = `${newHeight}px`;
-    //             }, i * ANIMATION_SPEED_MS);
-    //         }
-    //     }
-    // };
-
-    // const BubbleSort = () =>{
-
-    //     const animation = getBubbleSortAnimation(array.slice());
-    //     for (let i=0; i<animation.length; i++) {
-    //         const arrayBars = document.getElementsByClassName('array-bar');
-    //         if(i%4 === 0) {
-    //             const [barOneId, barTwoId] = animation[i];
-    //             const barOneStyle = arrayBars[barOneId].style;
-    //             const barTwoStyle = arrayBars[barTwoId].style;
-
-    //             setTimeout(() => {
-    //                 barOneStyle.backgroundColor = SECONDARY_COLOR;
-    //                 barTwoStyle.backgroundColor = SECONDARY_COLOR;
-    //             }, i * ANIMATION_SPEED);
-    //         } else if (i%4 === 1) {
-    //             const [barOneId, barTwoId] = animation[i];
-    //             const barOneStyle = arrayBars[barOneId].style;
-    //             const barTwoStyle = arrayBars[barTwoId].style;
-
-    //             setTimeout(() => {
-    //                 barOneStyle.backgroundColor = PRIMARY_COLOR;
-    //                 barTwoStyle.backgroundColor = PRIMARY_COLOR;
-    //             }, i * ANIMATION_SPEED);
-    //         }
-    //         else {
-    //             const [barOneId, newHeight] = animation[i];
-    //             const barOneStyle = arrayBars[barOneId].style;
-    //             setTimeout(() => {
-    //                 barOneStyle.height = `${newHeight}px`;
-    //                 barOneStyle.margin = `${730 - newHeight}px ${10/props.array.length}% auto`
-    //             }, i * ANIMATION_SPEED);
-    //         }
-    //     }
-
-    //     setTimeout(() => {
-    //         props.stopAnimation();
-    //         props.copyArray(array.slice());
-    //     }, animation.length * ANIMATION_SPEED)
-        
-
-    // };
 
     const BubbleSort = () => {
 
-      // let run = props.run;
-      // if(run) {
-          // let algorithm = props.algo;
-          // let array = props.array;
-          // const arrayCopy = array.slice();
           let animation = getBubbleSortAnimation(array.slice());
           
   
@@ -153,13 +80,6 @@ const Main = (props) => {
                   }, i * ANIMATION_SPEED);
               }
           }
-  
-          // setTimeout(() => {
-          //     props.stopAnimation();
-          //     props.copyArray(array.slice());
-          // }, animation.length * ANIMATION_SPEED)
-          
-      // }
     }
 
     let width ;
@@ -185,6 +105,52 @@ const Main = (props) => {
       width = '0.4vw'
     }
 
+    const code = `// Optimized implementation of Bubble sort
+    #include <bits/stdc++.h>
+    using namespace std;
+    
+    // An optimized version of Bubble Sort
+    void bubbleSort(int arr[], int n)
+    {
+        int i, j;
+        bool swapped;
+        for (i = 0; i < n - 1; i++) {
+            swapped = false;
+            for (j = 0; j < n - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    swap(arr[j], arr[j + 1]);
+                    swapped = true;
+                }
+            }
+    
+            // If no two elements were swapped
+            // by inner loop, then break
+            if (swapped == false)
+                break;
+        }
+    }
+    
+    // Function to print an array
+    void printArray(int arr[], int size)
+    {
+        int i;
+        for (i = 0; i < size; i++)
+            cout << " " << arr[i];
+    }
+    
+    // Driver program to test above functions
+    int main()
+    {
+        int arr[] = { 64, 34, 25, 12, 22, 11, 90 };
+        int N = sizeof(arr) / sizeof(arr[0]);
+        bubbleSort(arr, N);
+        cout << "Sorted array: \n";
+        printArray(arr, N);
+        return 0;
+    }
+    // This code is contributed by shivanisinghss2110
+    `;
+
 
   return (
     <div className='array-container'>
@@ -206,7 +172,6 @@ const Main = (props) => {
 
           </div>
 
-        {/* <div className='container'> */}
           <div className='box'>
             {array.map((value, idx) => (
                 <div className='array-bar' key={idx} style={{height: `${value}vh`, width: width}}>
@@ -216,13 +181,47 @@ const Main = (props) => {
 
           </div>
 
-        {/* </div> */}
-
-        {/* <GenerateBtn/> */}
-        {/* <button onClick={MergeSort}>Merge Sort</button> */}
         <div className='start-btn-div'>
           <button className='start-btn' onClick={BubbleSort}>Start Bubble Sort</button>
 
+        </div>
+
+        <div className='theory-content'>
+          <div>
+          <strong>Bubble Sort</strong> is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in the wrong order. This algorithm is not suitable for large data sets as its average and worst-case time complexity is quite high.
+          </div>
+          <h2>Bubble Sort Algorithm</h2>
+          <ul>
+            <li>traverse from left and compare adjacent elements and the higher one is placed at right side. </li>
+            <li>n this way, the largest element is moved to the rightmost end at first. </li>
+            <li>This process is then continued to find the second largest and place it and so on until the data is sorted.</li>
+          </ul>
+
+          <h3> Working Explaination with Example</h3>
+          <div><strong>Input: </strong> arr[] = [6, 0, 3, 5] </div>
+          <div style={{fontStyle: 'italic'}}><strong >First Pass:</strong></div>
+          <img src={bubble1}></img>
+          <div style={{fontStyle: 'italic'}}><strong >Second Pass:</strong></div>
+          <img src={bubble2}></img>
+          <div style={{fontStyle: 'italic'}}><strong >Third Pass:</strong></div>
+          <img src={bubble3}></img>
+
+          <div className='codes'>
+            <h3>Code: </h3>
+            <pre>
+              <code className='code-block'>{code}</code>
+            </pre>
+              <div><strong>Output</strong></div>
+            <div className='code-output'>
+              <div>Sorted array :</div>
+              <div>11 12 22 25 34 64 90</div>
+
+            </div>
+          </div>
+
+          <h3>Complexity Analysis</h3>
+          <div style={{fontStyle: 'italic'}}><strong>Time Complexity: </strong> O(N^2)</div>
+          <div style={{fontStyle: 'italic'}}><strong>Auxiliary Space: </strong> O(1)</div>
         </div>
     </div>
   )
