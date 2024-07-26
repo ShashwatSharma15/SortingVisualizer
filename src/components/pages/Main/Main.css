@@ -120,6 +120,7 @@
   .theory-content img{
     width: 70vw;
     margin: 2vw;
+    border: 2px solid darkgray;
   }
 
   .code-block{
