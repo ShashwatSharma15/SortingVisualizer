@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/SortingVisualizer/static/css/main.af7a55b7.css",
+    "main.js": "/SortingVisualizer/static/js/main.a3079b77.js",
+    "static/js/453.6585fc98.chunk.js": "/SortingVisualizer/static/js/453.6585fc98.chunk.js",
+    "static/media/bubble1.png": "/SortingVisualizer/static/media/bubble1.6a16a6246a99263bf261.png",
+    "static/media/heap2.png": "/SortingVisualizer/static/media/heap2.5ec38cbf61cfc9162161.png",
+    "static/media/heap3.png": "/SortingVisualizer/static/media/heap3.72e46c7809b5117c4b7a.png",
+    "static/media/heap4.png": "/SortingVisualizer/static/media/heap4.69f6b72847aefb207d8d.png",
+    "static/media/heap6.png": "/SortingVisualizer/static/media/heap6.f5ec4103a35e984641d0.png",
+    "static/media/bubble2.png": "/SortingVisualizer/static/media/bubble2.621086b46b9bfbda8110.png",
+    "static/media/heap1.png": "/SortingVisualizer/static/media/heap1.96f43c1eda00fc3dd096.png",
+    "static/media/heap7.png": "/SortingVisualizer/static/media/heap7.cb8f75c41fd1618bf00e.png",
+    "static/media/bubble3.png": "/SortingVisualizer/static/media/bubble3.93d1f65211cfad1e3040.png",
+    "static/media/quick6.png": "/SortingVisualizer/static/media/quick6.dd92a39b040258f7f46a.png",
+    "static/media/quick4.png": "/SortingVisualizer/static/media/quick4.dc855bbe572ce8761be7.png",
+    "static/media/quick8.png": "/SortingVisualizer/static/media/quick8.064da7895a11a06e64c0.png",
+    "static/media/quick2.png": "/SortingVisualizer/static/media/quick2.1aec6c1a84586d69ea9d.png",
+    "static/media/quick7.png": "/SortingVisualizer/static/media/quick7.290ac33024f3879e6a47.png",
+    "static/media/quick3.png": "/SortingVisualizer/static/media/quick3.60033aba5a8727066735.png",
+    "static/media/quick1.png": "/SortingVisualizer/static/media/quick1.3e9d22a646478763918a.png",
+    "static/media/quick5.png": "/SortingVisualizer/static/media/quick5.125d92984fba027b2518.png",
+    "static/media/merge1.png": "/SortingVisualizer/static/media/merge1.d2091d2779ca90c8873d.png",
+    "index.html": "/SortingVisualizer/index.html",
+    "main.af7a55b7.css.map": "/SortingVisualizer/static/css/main.af7a55b7.css.map",
+    "main.a3079b77.js.map": "/SortingVisualizer/static/js/main.a3079b77.js.map",
+    "453.6585fc98.chunk.js.map": "/SortingVisualizer/static/js/453.6585fc98.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.af7a55b7.css",
+    "static/js/main.a3079b77.js"
+  ]
+}
